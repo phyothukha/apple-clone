@@ -37,7 +37,6 @@ export default function Home() {
         </div>
       </div>
       <Carousels />
-      {/* <AppleCardsCarouselDemo /> */}
       <Marquee />
     </main>
   );

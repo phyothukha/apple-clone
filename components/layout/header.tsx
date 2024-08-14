@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "@/public/app-logo.svg";
 import Image from "next/image";
 import Container from "./container";
 import { NavLinks } from "@/data/headNavdata";
@@ -22,7 +21,7 @@ const Header = () => {
     <header className="text-gray-600 body-font  fixed top-0 py-2 backdrop-filter backdrop-blur-[10px] z-50 bg-[rgba(0,0,0,0.8)]  left-0 w-full">
       <nav className=" flex items-center gap-5 justify-between container mx-auto max-w-[1024px]">
         <a className="flex title-font font-medium items-center text-gray-900 ">
-          <Image src={logo} width={0} height={30} alt="APP Studio" />
+          <Image src="/app-logo.svg" width={0} height={30} alt="APP Studio" />
         </a>
         {NavLinks.map((nav, idx) => (
           <HoverCard key={idx}>
