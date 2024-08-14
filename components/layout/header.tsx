@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../public/app-logo.svg";
+import logo from "@/public/app-logo.svg";
 import Image from "next/image";
 import Container from "./container";
 import { NavLinks } from "@/data/headNavdata";
