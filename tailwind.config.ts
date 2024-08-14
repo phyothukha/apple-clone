@@ -25,8 +25,7 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        iphone:
-          "url(https://www.apple.com/v/home/bp/images/heroes/iphone-family/hero_iphone_family_a__c7v3mvx3jv42_mediumtall_2x.jpg)",
+        iphone: "url(/applebg.svg)",
         ipad: "url(https://www.apple.com/v/home/bp/images/heroes/ipad-pro/hero_ipadpro__bpt7a9d8sh42_mediumtall_2x.jpg)",
         macbookair:
           "url(https://www.apple.com/v/home/bp/images/promos/macbook-air-m3/promo_macbook_air_m3__e43jegok3wuq_large_2x.jpg)",
@@ -45,6 +44,9 @@ const config = {
       },
 
       colors: {
+        // title: "#0000004D",
+        title: "#6B7280", //#3d0075
+        section: "#f5f5f7",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -107,7 +109,6 @@ const config = {
       },
     },
   },
-  // plugins: [require("tailwindcss-animate")],
   plugins: [addVariablesForColors],
 } satisfies Config;
 
@@ -118,9 +119,6 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   );
-
-  console.log(newVars);
-
   addBase({
     ":root": newVars,
   });

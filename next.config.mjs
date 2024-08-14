@@ -4,11 +4,31 @@ const nextConfig = {
     dirs: ["pages", "utils"],
   },
   images: {
-    domains: [
-      "www.apple.com",
-      "images.unsplash.com",
-      "assets.aceternity.com",
-      "plus.unsplash.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.apple.com",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+        port: "",
+        pathname: "**",
+      },
     ],
   },
 };
