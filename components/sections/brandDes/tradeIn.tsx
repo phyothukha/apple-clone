@@ -58,7 +58,7 @@ const TradeIn = () => {
                 width: 140,
                 height: 33,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "140px 33px;",
+                backgroundSize: "140px 33px",
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"

@@ -136,6 +136,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
         <div className="flex justify-end gap-2 mr-10">
           <button
+            aria-label="left-arrow"
             className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
@@ -144,6 +145,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           </button>
           <button
             className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            aria-label="right-arrow"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >

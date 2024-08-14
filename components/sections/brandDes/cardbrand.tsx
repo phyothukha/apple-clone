@@ -59,7 +59,7 @@ const Cardbrand = () => {
                 width: 108,
                 height: 33,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "108px 33px;",
+                backgroundSize: "108px 33px",
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"
