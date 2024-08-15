@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import logo from "@/public/app-logo.svg";
 import { NavLinks } from "@/data/headNavdata";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import MenuItem from "./navbar-menu";
 import HeaderMobile from "./header-mobile";
+import logo from "@/public/app-logo.svg";
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -27,6 +27,7 @@ const Header = () => {
       >
         <a className="flex title-font font-medium items-center ">
           <Image src={logo} width={0} height={40} alt="APP Studio" />
+          {/* {logo} */}
         </a>
         <ul className="hidden md:flex justify-between w-4/5 gap-5">
           {NavLinks.map((nav, idx) => (
