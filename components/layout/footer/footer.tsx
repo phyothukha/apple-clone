@@ -1,5 +1,5 @@
 import { footNavLinks } from "@/data/footNavData";
-import React from "react";
+import FooterMobile from "./footer-mobile";
 
 const Footer = () => {
   return (
@@ -7,7 +7,6 @@ const Footer = () => {
       style={{
         fontFamily:
           "SF Pro Text, Myriad Set Pro, SF Pro Icons, Apple Legacy Chevron, Helvetica Neue, Helvetica, Arial, sans-serif",
-        minWidth: 1024,
         overflow: "hidden",
         position: "relative",
         zIndex: 1,
@@ -146,7 +145,7 @@ const Footer = () => {
 
       <nav className="container  mx-auto max-w-[1024px] py-10">
         <hr className=" w-full " />
-        <div className=" flex gap-y-3 flex-wrap text-[12px]  leading-tight tracking-wide pt-[10px]">
+        <div className="  hidden md:flex gap-y-3 flex-wrap text-[12px]  leading-tight tracking-wide pt-[10px]">
           {footNavLinks.map((footNav, idx) => (
             <div key={idx} className=" w-1/5">
               {footNav.main.map((foo, idx) => (
@@ -165,6 +164,10 @@ const Footer = () => {
               ))}
             </div>
           ))}
+        </div>
+        {/* Mobile responsive design */}
+        <div className=" md:hidden inline">
+          <FooterMobile />
         </div>
       </nav>
       <nav className=" container mx-auto max-w-[1024px]">

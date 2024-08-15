@@ -44,7 +44,7 @@ const VisionPro = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <h3
+            <h1
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -64,7 +64,7 @@ const VisionPro = () => {
               }}
               className=" w-full mx-auto relative"
               aria-label="Macbook Air"
-            ></h3>
+            ></h1>
             <p
               className=" w-full mx-auto relative"
               style={{

@@ -43,7 +43,7 @@ const TradeIn = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <h3
+            <h1
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -63,7 +63,7 @@ const TradeIn = () => {
               }}
               className=" w-full mx-auto relative"
               aria-label="Macbook Air"
-            ></h3>
+            ></h1>
             <p
               className=" w-full mx-auto relative text-[#1d1d1f]"
               style={{

@@ -16,7 +16,7 @@ export default function Home() {
         <HeroSection />
         <IPadSection />
       </div>
-      <div className=" grid grid-cols-2 gap-3 mt-28 mb-3  mx-2">
+      <div className=" grid grid-cols-1  lg:grid-cols-2 gap-3 my-28  mx-2">
         <div className=" col-span-1">
           <MacbookAir />
         </div>

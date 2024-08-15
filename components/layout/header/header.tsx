@@ -23,7 +23,7 @@ const Header = () => {
         onMouseLeave={() => setActive(null)}
         className=" flex items-center gap-5 justify-between container mx-auto max-w-[1024px]"
       >
-        <a className="flex title-font font-medium items-center ">
+        <a href="/" className="flex title-font font-medium items-center ">
           <svg
             height="48"
             viewBox="0 0 17 48"
