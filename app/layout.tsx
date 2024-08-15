@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Apple - Innovative solutions for mobile and web app development. Discover cutting-edge tools, resources, and services for your app development needs.",
   icons: {
-    icon: [{ url: "/app-logo.svg", sizes: "16 16" }],
+    icon: [{ url: "/icon.tsx" }],
   },
 };
 
