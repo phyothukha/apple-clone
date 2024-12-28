@@ -2,9 +2,9 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className=" relative h-[650px]">
-      <div className=" h-[650px] w-full">
-        <div className=" h-[650px]  relative flex flex-col overflow-hidden">
+    <div className=" relative h-[768px]">
+      <div className=" h-[768px] w-full">
+        <div className=" h-[768px]  relative flex flex-col overflow-hidden">
           {/* <a
             href=""
             className=" absolute h-full w-full bottom-0 left-0 z-30"
@@ -29,9 +29,9 @@ const HeroSection = () => {
 
         <div className=" absolute top-0 left-0 right-0 h-full w-full z-10 flex-1 overflow-visible">
           <div
-            className=" bg-iphone min-w-[1068px] h-[750px] bg-no-repeat object-contain"
+            className=" bg-iphone min-w-[1068px] h-[768px] bg-no-repeat object-contain"
             style={{
-              backgroundSize: "100vw 750px",
+              backgroundSize: "100vw 768px",
             }}
           ></div>
         </div>

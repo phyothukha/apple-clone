@@ -12,11 +12,11 @@ import Marquee from "@/components/sections/marquee/marquee";
 export default function Home() {
   return (
     <main className=" w-full overflow-hidden">
-      <div className=" grid gap-28">
+      <div className=" grid">
         <HeroSection />
         <IPadSection />
       </div>
-      <div className=" grid grid-cols-1  lg:grid-cols-2 gap-3 my-28  mx-2">
+      <div className=" grid grid-cols-1  lg:grid-cols-2 gap-3  mt-28 mx-2">
         <div className=" col-span-1">
           <MacbookAir />
         </div>
