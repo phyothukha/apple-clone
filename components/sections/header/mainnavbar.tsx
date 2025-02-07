@@ -55,11 +55,6 @@ const MainNavbar = () => {
             </HoverCard>
           ))}
         </div>
-
-        {/* <h1 className=" text-white text-xs">
-          The #1 Online Tech Retailer in Myanmar » Reviews{" "}
-        </h1> */}
-
         <p className=" text-white text-xs inline-flex gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

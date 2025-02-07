@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: "/icon.tsx" }],
   },
-  keywords: ["Phyo Thu Kha", "snake game", "mern stack developer"],
+  keywords: ["Phyo Thu Kha", "apple website", "mern stack developer"],
   openGraph: {
     title: "Apple Webite Clone",
     description:

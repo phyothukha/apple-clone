@@ -2,13 +2,9 @@ import React from "react";
 
 const IPadSection = () => {
   return (
-    <div className=" relative h-[750px]">
+    <section className=" relative h-[750px]">
       <div className=" h-[750px] w-full">
         <div className=" h-[750px]  relative flex flex-col overflow-hidden">
-          {/* <a
-            href=""
-            className=" absolute h-full w-full bottom-0 left-0 z-30"
-          ></a> */}
           <div className=" text-center relative z-40 pt-20">
             <h1 className=" lg:text-[56px] md:text-[40px] text-[32px]  font-bold text-[#fff]">
               iPad Pro
@@ -36,7 +32,7 @@ const IPadSection = () => {
           ></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

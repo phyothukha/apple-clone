@@ -2,13 +2,9 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className=" relative h-[768px]">
+    <section className=" relative h-[768px]">
       <div className=" h-[768px] w-full">
         <div className=" h-[768px]  relative flex flex-col overflow-hidden">
-          {/* <a
-            href=""
-            className=" absolute h-full w-full bottom-0 left-0 z-30"
-          ></a> */}
           <div className=" text-center relative z-40 lg:pt-20 md:pt-32 pt-44">
             <h1 className=" lg:text-[56px] md:text-[40px] text-[32px]  font-bold text-[#fff]">
               iPhone
@@ -36,7 +32,7 @@ const HeroSection = () => {
           ></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
