@@ -1,0 +1,83 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  items: {
+    image: string;
+    title: string;
+  }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  class?: string;
+}
+
+const {
+  items,
+  direction = "left",
+  speed = "fast",
+  pauseOnHover = true,
+  class: className,
+} = Astro.props;
+---
+
+<div
+  data-scroller-container
+  class={cn("scroller relative z-20  max-w-full overflow-hidden  ", className)}
+>
+  <ul
+    data-scroller-list
+    data-direction={direction}
+    data-speed={speed}
+    class={cn(
+      " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+      pauseOnHover && "hover:[animation-play-state:paused]",
+    )}
+  >
+    {
+      items.map((item) => (
+        <li class="w-[500px] h-[250px] object-contain mx-auto group bg-slate-700 cursor-pointer hover:bg-slate-600  max-w-full relative rounded-md border border-b-0 flex-shrink-0 border-slate-700  overflow-hidden md:w-[450px]">
+          <button class=" py-2 z-30 px-4 bg-white text-black ease-in-out border text-[12px] rounded-full absolute left-[50%] transform top-[50%] translate-y-[0%]  transition duration-500 opacity-0 group-hover:opacity-85 group-hover:-translate-y-[50%]  -translate-x-[50%]">
+            Play Now
+          </button>
+          <img
+            src={item.image}
+            alt="Gallery"
+            class=" group-hover:blur-sm"
+            height="250"
+            width="500"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-scroller-container]")
+    .forEach((container) => {
+      const list = container.querySelector<HTMLUListElement>(
+        "[data-scroller-list]",
+      );
+      if (!list) return;
+
+      const direction = list.dataset.direction;
+      const speed = list.dataset.speed;
+
+      Array.from(list.children).forEach((item) => {
+        list.appendChild(item.cloneNode(true));
+      });
+
+      container.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "forwards" : "reverse",
+      );
+      container.style.setProperty(
+        "--animation-duration",
+        speed === "fast" ? "20s" : speed === "normal" ? "40s" : "150s",
+      );
+
+      list.classList.add("animate-scroll");
+    });
+</script>

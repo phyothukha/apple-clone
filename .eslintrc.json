@@ -1,18 +1,23 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "extends": [
-    "next",
-    "prettier",
-    "plugin:@next/next/recommended",
     "eslint:recommended",
-    "next"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
-  "settings": {
-    "next": {
-      "rootDir": "packages/my-app/"
-    }
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
   },
   "rules": {
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off"
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }

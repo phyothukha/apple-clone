@@ -1,0 +1,57 @@
+---
+import { footNavLinks } from "@/data/footNavData";
+
+let accordionId = 0;
+---
+
+<div>
+  {
+    footNavLinks.map((footNav) =>
+      footNav.main.map((fn) => {
+        const id = `footer-accordion-${accordionId++}`;
+        return (
+          <div>
+            <h3
+              data-accordion-trigger={id}
+              class="my-3 text-xs font-bold cursor-pointer"
+            >
+              {fn.maintitle}
+            </h3>
+            <hr class="my-3" />
+            <div
+              data-accordion-panel={id}
+              class="overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out grid grid-rows-[0fr]"
+            >
+              <ul class="ms-3 gap-2 flex flex-col min-h-0 overflow-hidden">
+                {fn.childTitle.map((child) => (
+                  <li>
+                    <p class=" hover:underline text-xs font-medium inline cursor-pointer">
+                      {child}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      }),
+    )
+  }
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-accordion-trigger]")
+    .forEach((trigger) => {
+      const id = trigger.dataset.accordionTrigger;
+      const panel = document.querySelector<HTMLElement>(
+        `[data-accordion-panel="${id}"]`,
+      );
+      if (!panel) return;
+
+      trigger.addEventListener("click", () => {
+        const isOpen = panel.classList.toggle("grid-rows-[1fr]");
+        panel.classList.toggle("grid-rows-[0fr]", !isOpen);
+      });
+    });
+</script>

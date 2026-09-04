@@ -1,0 +1,101 @@
+---
+interface Props {
+  initialScroll?: number;
+}
+
+const { initialScroll = 0 } = Astro.props;
+---
+
+<div class="relative w-full" data-carousel-root>
+  <div
+    data-carousel-scroll
+    data-initial-scroll={initialScroll}
+    class="flex w-full overflow-x-scroll overscroll-x-auto py-5 md:py-10 scroll-smooth [scrollbar-width:none]"
+  >
+    <div class="absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l">
+    </div>
+
+    <div class="flex flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
+      <slot />
+    </div>
+  </div>
+  <div class="flex justify-end gap-2 mr-10">
+    <button
+      aria-label="left-arrow"
+      data-carousel-prev
+      class="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        class="h-6 w-6 text-gray-500"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+        />
+      </svg>
+    </button>
+    <button
+      class="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+      aria-label="right-arrow"
+      data-carousel-next
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        class="h-6 w-6 text-gray-500"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-carousel-root]")
+    .forEach((root) => {
+      const scroller = root.querySelector<HTMLElement>(
+        "[data-carousel-scroll]",
+      );
+      const prevBtn = root.querySelector<HTMLButtonElement>(
+        "[data-carousel-prev]",
+      );
+      const nextBtn = root.querySelector<HTMLButtonElement>(
+        "[data-carousel-next]",
+      );
+      if (!scroller || !prevBtn || !nextBtn) return;
+
+      const initialScroll = Number(scroller.dataset.initialScroll ?? 0);
+      if (initialScroll) scroller.scrollLeft = initialScroll;
+
+      function checkScrollability() {
+        prevBtn!.disabled = scroller!.scrollLeft <= 0;
+        nextBtn!.disabled =
+          scroller!.scrollLeft >=
+          scroller!.scrollWidth - scroller!.clientWidth - 1;
+      }
+
+      scroller.addEventListener("scroll", checkScrollability);
+      checkScrollability();
+
+      prevBtn.addEventListener("click", () => {
+        scroller.scrollBy({ left: -300, behavior: "smooth" });
+      });
+      nextBtn.addEventListener("click", () => {
+        scroller.scrollBy({ left: 300, behavior: "smooth" });
+      });
+    });
+</script>

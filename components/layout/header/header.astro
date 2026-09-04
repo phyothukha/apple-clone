@@ -1,0 +1,168 @@
+---
+import { NavLinks } from "@/data/headNavdata";
+import NavbarMenuItem from "./navbar-menu.astro";
+import HeaderMobile from "./header-mobile.astro";
+---
+
+<header
+  id="site-header"
+  class=" body-font  fixed top-0 py-1 backdrop-filter backdrop-blur-[10px] z-50   left-0 w-full bg-[rgba(0,0,0,0.8)]  shadow-md backdrop-blur-md"
+>
+  <nav
+    id="main-nav"
+    class=" flex items-center gap-5 justify-between container mx-auto max-w-[1024px]"
+  >
+    <a href="/" class="flex title-font font-medium items-center ">
+      <svg
+        height="48"
+        viewBox="0 0 17 48"
+        fill="white"
+        width="17"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="m15.5752 19.0792a4.2055 4.2055 0 0 0 -2.01 3.5376 4.0931 4.0931 0 0 0 2.4908 3.7542 9.7779 9.7779 0 0 1 -1.2755 2.6351c-.7941 1.1431-1.6244 2.2862-2.8878 2.2862s-1.5883-.734-3.0443-.734c-1.42 0-1.9252.7581-3.08.7581s-1.9611-1.0589-2.8876-2.3584a11.3987 11.3987 0 0 1 -1.9373-6.1487c0-3.61 2.3464-5.523 4.6566-5.523 1.2274 0 2.25.8062 3.02.8062.734 0 1.8771-.8543 3.2729-.8543a4.3778 4.3778 0 0 1 3.6822 1.841zm-6.8586-2.0456a1.3865 1.3865 0 0 1 -.2527-.024 1.6557 1.6557 0 0 1 -.0361-.337 4.0341 4.0341 0 0 1 1.0228-2.5148 4.1571 4.1571 0 0 1 2.7314-1.4078 1.7815 1.7815 0 0 1 .0361.373 4.1487 4.1487 0 0 1 -.9867 2.587 3.6039 3.6039 0 0 1 -2.5148 1.3236z"
+        ></path>
+      </svg>
+    </a>
+    <ul class="hidden md:flex justify-between w-4/5 gap-5">
+      {
+        NavLinks.map((nav, idx) => (
+          <NavbarMenuItem item={nav.mainlabel} index={idx} nav={nav} />
+        ))
+      }
+    </ul>
+    <div class=" flex items-center gap-5">
+      <div class="">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-5 fill-white"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-5 fill-white"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M6 5v1H4.667a1.75 1.75 0 0 0-1.743 1.598l-.826 9.5A1.75 1.75 0 0 0 3.84 19H16.16a1.75 1.75 0 0 0 1.743-1.902l-.826-9.5A1.75 1.75 0 0 0 15.333 6H14V5a4 4 0 0 0-8 0Zm4-2.5A2.5 2.5 0 0 0 7.5 5v1h5V5A2.5 2.5 0 0 0 10 2.5ZM7.5 10a2.5 2.5 0 0 0 5 0V8.75a.75.75 0 0 1 1.5 0V10a4 4 0 0 1-8 0V8.75a.75.75 0 0 1 1.5 0V10Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <div id="mobile-toggle" class="inline cursor-pointer md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-8"
+        >
+          <path
+            id="hb-top"
+            fill-rule="evenodd"
+            fill="white"
+            class="transform duration-500 ease-in-out"
+            d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75Z"
+            clip-rule="evenodd"></path>
+          <path
+            id="hb-mid"
+            fill-rule="evenodd"
+            fill="white"
+            class="transform duration-500"
+            d="M3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Z"
+            clip-rule="evenodd"></path>
+          <path
+            id="hb-bottom"
+            fill-rule="evenodd"
+            class="transform duration-500 ease-in-out"
+            d="M3 17.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+            clip-rule="evenodd"
+            fill="#BB85FD"></path>
+        </svg>
+      </div>
+    </div>
+  </nav>
+  <div
+    id="mobile-panel"
+    class="overflow-hidden  translate-y-3 transition-all duration-500 ease-in-out bg-white h-0"
+  >
+    <HeaderMobile />
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header")!;
+  const nav = document.getElementById("main-nav")!;
+  const mobileToggle = document.getElementById("mobile-toggle")!;
+  const mobilePanel = document.getElementById("mobile-panel")!;
+  const hbTop = document.getElementById("hb-top")!;
+  const hbMid = document.getElementById("hb-mid")!;
+  const hbBottom = document.getElementById("hb-bottom")!;
+
+  const TRANSLUCENT_CLASSES = [
+    "bg-[rgba(0,0,0,0.8)]",
+    "shadow-md",
+    "backdrop-blur-md",
+  ];
+
+  let activeIndex: string | null = null;
+  let mobileOpen = false;
+
+  function updateHeaderBg() {
+    const solid = activeIndex !== null || mobileOpen;
+    header.classList.toggle("bg-black", solid);
+    TRANSLUCENT_CLASSES.forEach((c) => header.classList.toggle(c, !solid));
+  }
+
+  function setActivePanel(index: string | null) {
+    activeIndex = index;
+    document.querySelectorAll<HTMLElement>("[data-nav-panel]").forEach((panel) => {
+      const isOpen = panel.dataset.navPanel === index;
+      panel.classList.toggle("opacity-100", isOpen);
+      panel.classList.toggle("translate-y-0", isOpen);
+      panel.classList.toggle("pointer-events-auto", isOpen);
+      panel.classList.toggle("opacity-0", !isOpen);
+      panel.classList.toggle("-translate-y-1", !isOpen);
+      panel.classList.toggle("pointer-events-none", !isOpen);
+    });
+    updateHeaderBg();
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-nav-item]").forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      setActivePanel(item.dataset.navIndex ?? null);
+    });
+  });
+
+  nav.addEventListener("mouseleave", () => {
+    setActivePanel(null);
+  });
+
+  mobileToggle.addEventListener("click", () => {
+    mobileOpen = !mobileOpen;
+
+    mobilePanel.classList.toggle("h-screen", mobileOpen);
+    mobilePanel.classList.toggle("h-0", !mobileOpen);
+
+    hbTop.classList.toggle("rotate-45", mobileOpen);
+    hbTop.classList.toggle("translate-x-[8px]", mobileOpen);
+    hbTop.classList.toggle("-translate-y-[2px]", mobileOpen);
+
+    hbMid.classList.toggle("translate-x-10", mobileOpen);
+    hbMid.classList.toggle("opacity-0", mobileOpen);
+
+    hbBottom.classList.toggle("-rotate-45", mobileOpen);
+    hbBottom.classList.toggle("-translate-x-[10px]", mobileOpen);
+    hbBottom.classList.toggle("translate-y-[8px]", mobileOpen);
+
+    updateHeaderBg();
+  });
+</script>

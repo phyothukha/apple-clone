@@ -1,0 +1,41 @@
+---
+import AppleIntelligence from "@/components/sections/brandDes/appleIntelligence.astro";
+import Cardbrand from "@/components/sections/brandDes/cardbrand.astro";
+import MacbookAir from "@/components/sections/brandDes/macbookair.astro";
+import TradeIn from "@/components/sections/brandDes/tradeIn.astro";
+import VisionPro from "@/components/sections/brandDes/visionPro.astro";
+import Watch from "@/components/sections/brandDes/watch.astro";
+import Carousels from "@/components/sections/carousel/carousels.astro";
+import HeroSection from "@/components/sections/herosection/herosection.astro";
+import IPadSection from "@/components/sections/herosection/iPadSection.astro";
+import Marquee from "@/components/sections/marquee/marquee.astro";
+---
+
+<main class=" w-full overflow-hidden">
+  <div class=" grid">
+    <HeroSection />
+    <IPadSection />
+  </div>
+  <div class=" grid grid-cols-1  lg:grid-cols-2 gap-3  mt-28 mx-2">
+    <div class=" col-span-1">
+      <MacbookAir />
+    </div>
+    <div class=" col-span-1">
+      <AppleIntelligence />
+    </div>
+    <div class=" col-span-1">
+      <VisionPro />
+    </div>
+    <div class=" col-span-1">
+      <Watch />
+    </div>
+    <div class=" col-span-1">
+      <Cardbrand />
+    </div>
+    <div class=" col-span-1">
+      <TradeIn />
+    </div>
+  </div>
+  <Carousels />
+  <Marquee />
+</main>

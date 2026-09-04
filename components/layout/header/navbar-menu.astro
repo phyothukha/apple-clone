@@ -1,0 +1,50 @@
+---
+import Container from "@/components/layout/container.astro";
+
+interface Props {
+  item: string;
+  index: number;
+  nav: {
+    mainlabel: string;
+    Link: string;
+    childLabel: {
+      maintitle: string;
+      childTitle: string[];
+    }[];
+  };
+}
+
+const { item, index, nav } = Astro.props;
+---
+
+<li data-nav-item data-nav-index={index}>
+  <p class="cursor-pointer text-white  text-[12px] hover:opacity-[0.9] ">
+    {item}
+  </p>
+  <div
+    data-nav-panel={index}
+    class="absolute left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 pointer-events-none transition-all duration-200 ease-out"
+    style={{ top: "calc(50% + 1rem)" }}
+  >
+    <div class=" dark:bg-black backdrop-blur-sm  bg-black text-white w-screen overflow-hidden  dark:border-white/[0.2] shadow-xl">
+      <Container class=" py-5">
+        <div class=" grid grid-cols-3 gap-5">
+          {
+            nav.childLabel.map((child) => (
+              <div>
+                <h4 class=" font-sm p-2">{child.maintitle}</h4>
+                {child.childTitle.map((ch) => (
+                  <div>
+                    <p class=" cursor-pointer p-2 text-sm   transition-colors duration-150  ">
+                      {ch}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </Container>
+    </div>
+  </div>
+</li>
