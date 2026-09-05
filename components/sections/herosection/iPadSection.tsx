@@ -6,9 +6,9 @@ const IPadSection = () => {
       <div className=" h-[750px] w-full">
         <div className=" h-[750px]  relative flex flex-col overflow-hidden">
           <div className=" text-center relative z-40 pt-20">
-            <h1 className=" lg:text-[56px] md:text-[40px] text-[32px]  font-bold text-[#fff]">
+            <h2 className=" lg:text-[56px] md:text-[40px] text-[32px]  font-bold text-[#fff]">
               iPad Pro
-            </h1>
+            </h2>
             <p className=" lg:text-[26px] md:text-[20px] text-[15px] mt-[6px] font-[300] text-[#fff] max-w-[480px] block w-full mx-auto">
               Unbelievably thin.Incredibly powerful.
             </p>

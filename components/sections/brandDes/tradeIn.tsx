@@ -43,7 +43,7 @@ const TradeIn = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <h1
+            <h2
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -62,8 +62,9 @@ const TradeIn = () => {
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"
-              aria-label="Macbook Air"
-            ></h1>
+            >
+              <span className="sr-only">Apple Trade In</span>
+            </h2>
             <p
               className=" w-full mx-auto relative text-[#1d1d1f]"
               style={{

@@ -44,7 +44,7 @@ const Cardbrand = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <div
+            <h2
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -63,8 +63,9 @@ const Cardbrand = () => {
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"
-              aria-label="Macbook Air"
-            ></div>
+            >
+              <span className="sr-only">Apple Card</span>
+            </h2>
             <p
               className=" w-full mx-auto relative text-[#1d1d1f]"
               style={{

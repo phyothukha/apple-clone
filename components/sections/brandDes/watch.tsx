@@ -44,7 +44,7 @@ const Watch = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <h1
+            <h2
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -64,10 +64,9 @@ const Watch = () => {
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"
-              aria-label="Macbook Air"
             >
-              {/* MacBook Air */}
-            </h1>
+              <span className="sr-only">Apple Watch Series 9</span>
+            </h2>
             <p
               className=" w-full mx-auto relative text-white"
               style={{

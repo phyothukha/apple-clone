@@ -44,7 +44,7 @@ const MacbookAir = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <h1
+            <h2
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -58,10 +58,9 @@ const MacbookAir = () => {
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"
-              aria-label="Macbook Air"
             >
               MacBook Air
-            </h1>
+            </h2>
             <p
               className=" w-full mx-auto relative"
               style={{

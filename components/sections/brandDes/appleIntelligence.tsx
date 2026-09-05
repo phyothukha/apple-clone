@@ -44,7 +44,7 @@ const AppleIntelligence = () => {
             }}
             className="unit-copy-wrapper"
           >
-            <h1
+            <h2
               style={{
                 fontSize: 40,
                 lineHeight: 1.1,
@@ -59,10 +59,9 @@ const AppleIntelligence = () => {
                 textAlign: "center",
               }}
               className=" w-full mx-auto relative"
-              aria-label="Macbook Air"
             >
               Apple Intelligence
-            </h1>
+            </h2>
             <p
               className=" w-full mx-auto relative"
               style={{

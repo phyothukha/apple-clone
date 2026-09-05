@@ -7,28 +7,55 @@ import Footer from "@/components/layout/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteUrl = "https://apple-clone-peach.vercel.app";
+const title = "Apple Website Clone";
+const description =
+  "A pixel-perfect front-end clone of Apple's website homepage, recreating the iPhone, iPad, MacBook Air, Apple Watch, Vision Pro, and Apple Card sections with Next.js, TypeScript, and Tailwind CSS.";
+
 export const metadata: Metadata = {
-  title: "Apple Webite Clone",
-  description:
-    "Innovative solutions for mobile and web app development. Discover cutting-edge tools, resources, and services for your app development needs.",
-  icons: {
-    icon: [{ url: "/icon.tsx" }],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: title,
+    template: `%s | ${title}`,
   },
-  keywords: ["Phyo Thu Kha", "apple website", "mern stack developer"],
+  description,
+  keywords: [
+    "Phyo Thu Kha",
+    "apple website clone",
+    "apple.com clone",
+    "mern stack developer",
+    "Next.js portfolio project",
+  ],
+  authors: [{ name: "Phyo Thu Kha" }],
+  creator: "Phyo Thu Kha",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "Apple Webite Clone",
-    description:
-      "Innovative solutions for mobile and web app development. Discover cutting-edge tools, resources, and services for your app development needs.",
-    url: "https://apple-clone-peach.vercel.app/",
+    title,
+    description,
+    url: siteUrl,
+    siteName: title,
+    locale: "en_US",
     images: [
       {
-        url: "https://apple-clone-peach.vercel.app/showcase.png",
+        url: "/showcase.png",
         width: 800,
         height: 600,
-        alt: "Description of the image for screen readers",
+        alt: `${title} preview screenshot`,
       },
     ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/showcase.png"],
   },
 };
 
